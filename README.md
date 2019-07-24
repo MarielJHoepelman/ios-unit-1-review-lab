@@ -72,6 +72,21 @@ Identify if there are 3 integers in the following array that sum to 10. If so, p
 
 ```swift
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
+
+var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
+
+var triplets: [[Int]] = []
+
+for a in tripleSumArr {
+    for b in tripleSumArr {
+        for c in tripleSumArr {
+            if a + b + c == 10 && !triplets.contains([a,b,c].sorted()) {
+                triplets.append([a,b,c].sorted())
+            }
+        }
+    }
+}
+print(triplets)
 ```
 
 
